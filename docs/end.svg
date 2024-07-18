@@ -109,21 +109,21 @@
 <polygon fill="#999999" stroke="#999999" points="200.68,-152.6 195.47,-158.96 197.32,-154.27 193.96,-155.94 193.96,-155.94 193.96,-155.94 197.32,-154.27 192.46,-152.92 200.68,-152.6 200.68,-152.6"/>
 <text text-anchor="middle" x="87.79" y="-244" font-family="Helvetica,sans-Serif" font-size="10.00">feed.json</text>
 </g>
-<!-- rss.xml -->
+<!-- feed.xml -->
 <g id="node13" class="node">
-<title>rss.xml</title>
-<g id="a_node13"><a xlink:href="rss.xml" xlink:title="RSS feed\l">
+<title>feed.xml</title>
+<g id="a_node13"><a xlink:href="feed.xml" xlink:title="RSS feed\l">
 <polygon fill="white" stroke="#b3b3b3" points="262.47,-48 203.86,-48 203.86,-12 262.47,-12 262.47,-48"/>
 <text text-anchor="start" x="211.76" y="-27" font-family="Helvetica,sans-Serif" font-size="10.00">RSS feed</text>
 </a>
 </g>
 </g>
-<!-- &#45;&gt;rss.xml -->
+<!-- &#45;&gt;feed.xml -->
 <g id="edge12" class="edge">
-<title>&#45;&gt;rss.xml</title>
+<title>&#45;&gt;feed.xml</title>
 <path fill="none" stroke="#999999" d="M7.7,-317.82C12.42,-298.11 31.22,-226.34 65,-177 101.12,-124.25 160.36,-78.29 197.76,-52.37"/>
 <polygon fill="#999999" stroke="#999999" points="204.02,-48.08 199.74,-55.1 200.93,-50.2 197.84,-52.32 197.84,-52.32 197.84,-52.32 200.93,-50.2 195.93,-49.53 204.02,-48.08 204.02,-48.08"/>
-<text text-anchor="middle" x="87.79" y="-180" font-family="Helvetica,sans-Serif" font-size="10.00">rss.xml</text>
+<text text-anchor="middle" x="87.79" y="-180" font-family="Helvetica,sans-Serif" font-size="10.00">feed.xml</text>
 </g>
 <!-- pages/1.html -->
 <g id="node6" class="node">

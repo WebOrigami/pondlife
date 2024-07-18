@@ -9,4 +9,4 @@ posts:
   2025-07-07.html: Second post
   2025-07-10.html: Third post
 feed.json: JSON feed
-rss.xml: RSS feed
+feed.xml: RSS feed

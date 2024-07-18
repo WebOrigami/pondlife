@@ -47,7 +47,7 @@
 
     // Feeds
     feed.json = @json(feed)
-    rss.xml = @rss(feed)
+    feed.xml = @rss(feed)
   }
 
   // From the above, we return the `public` tree as the program's output.
