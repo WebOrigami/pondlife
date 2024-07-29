@@ -3,14 +3,14 @@
   "version": "0.0.1",
   "type": "module",
   "dependencies": {
-    "@weborigami/origami": "0.0.52"
+    "@weborigami/origami": "0.0.62"
   },
   "license": "MIT",
   "engines": {
     "node": "^22.0.0"
   },
   "scripts": {
-    "build": "rm -rf build; ori @copy src/site.ori, @mkdir/build",
+    "build": "ori @copy src/site.ori, @clean @mkdir/build",
     "docs": "ori '@svg docs/start.yaml, { createLinks: false }' > docs/start.svg; ori '@svg docs/end.yaml, { createLinks: false }' > docs/end.svg",
     "start": "ori @serve @watch src, =@debug site.ori"
   }
