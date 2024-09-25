@@ -1,12 +1,13 @@
 // The posts in JSON Feed format
-(posts) => {
+{
   version: "https://jsonfeed.org/version/1.1"
   title: siteInfo.yaml/title
   description: siteInfo.yaml/description
   feed_url: `${ siteInfo.yaml/url }/feed.json`
   home_page_url: siteInfo.yaml/url
   
-  items: @values(@map(posts, (post, slug) => {
+  // Map the post data to JSON Feed items
+  items: @values(@map(posts.ori, (post, slug) => {
     content_html: post/@text
     date_published: post/date
     id: `${ siteInfo.yaml/url }/posts/${ slug }`

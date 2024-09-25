@@ -2,7 +2,7 @@
 (post, key, tree) => page.ori({
   title: post/title
   @text: `
-    ${ post.ori(post, key) }
+    ${ postFragment.ori(post, key) }
     <p>
       ${ @if(post/previousKey, =`
         <a class="previous" href="${ post/previousKey }">Previous: ${ tree(post/previousKey)/title }</a>

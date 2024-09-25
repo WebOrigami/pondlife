@@ -1,54 +1,26 @@
-// Origami program to generate a blog from a folder of markdown files
+// Define the blog's overall structure
 {
-  // Define a pipeline that starts with the folder of markdown files and applies
-  // a series of transformations to process them into data that's ready to be
-  // displayed on the various types of pages.
-  data = markdown
-    // Convert the markdown to HTML, changing the extension from `md` to `html`.
-    → @mapFn(@mdHtml)
-    // Add a `date` field parsed from the filename.
-    → @mapFn((post, fileName) => { …post, date: parseDate.ori(fileName) })
-    // Add next/previous keys. The posts are already in chronological order
-    // because their names start with a YYYY-MM-DD date, so we can determine the
-    // next and previous posts by looking at the adjacent posts in the list. We
-    // need to do this before reversing the order in the next step; we want
-    // "next" to go to the next post in chronological order, not display order.
-    → @addNextPrevious
-    // Finally, reverse to get posts in reverse chronological order.
-    → @reverse
+  // About page uses the basic template.
+  about.html = page.ori(@mdHtml(about.md))
 
-  // Turn all the posts into a feed.
-  feed = feed.ori(data)
+  // Assets (fonts, styles) and images are included as is.
+  assets
+  images
 
-  // Construct the site's tree of public resources to deploy.
-  public = {
-    // About page uses the basic template.
-    about.html = page.ori(@mdHtml(about.md))
+  // Feeds
+  feed.json = @json(feed.ori)
+  feed.xml = @rss(feed.ori)
 
-    // Assets (fonts, styles) and images are included as is.
-    assets
-    images
+  // Use the first page of posts as the home page.
+  index.html = pages/1.html
 
-    // Use the first page of posts as the home page.
-    index.html = pages/1.html
+  // The pages area breaks the posts into sets. Group the posts into sets of 10,
+  // then turn each set of posts into a page with an `.html` extension.
+  pages = @map(@paginate(posts.ori, 10), {
+    extension: "→html"
+    value: multiPostPage.ori
+  })
 
-    // The pages area breaks the posts into sets.
-    pages =
-      // Group the posts into sets of 10.
-      @paginate(data, 10)
-      // Turn each set of posts into a page with an `.html` extension.
-      → @mapFn({
-        extension: "→html"
-        value: multiPostPage.ori
-      })
-
-    // The posts area contains a page for each individual post.
-    posts = @map(data, singlePostPage.ori)
-
-    // Feeds
-    feed.json = @json(feed)
-    feed.xml = @rss(feed)
-  }
-
-  // From the above, we return the `public` tree as the program's output.
-}/public
+  // The posts area contains a page for each individual post.
+  posts = @map(posts.ori, singlePostPage.ori)
+}
