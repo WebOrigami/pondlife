@@ -8,19 +8,19 @@
   images
 
   // Feeds
-  feed.json = @json(feed.ori)
-  feed.xml = @rss(feed.ori)
+  feed.json = @json(feed.ori(posts.ori))
+  feed.xml = @rss(feed.ori(posts.ori))
 
   // Use the first page of posts as the home page.
   index.html = pages/1.html
 
-  // The pages area breaks the posts into sets. Group the posts into sets of 10,
-  // then turn each set of posts into a page with an `.html` extension.
-  pages = @map(@paginate(posts.ori, 10), {
+  // The pages area groups the posts into sets of 10, turning each group of
+  // posts into a page with an `.html` extension.
+  pages/ = @map(@paginate(posts.ori, 10), {
     extension: "→html"
     value: multiPostPage.ori
   })
 
   // The posts area contains a page for each individual post.
-  posts = @map(posts.ori, singlePostPage.ori)
+  posts/ = @map(posts.ori, singlePostPage.ori)
 }
