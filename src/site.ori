@@ -7,7 +7,7 @@
   assets
   images
 
-  // Feeds
+  // Feeds render the data in JSON Feed and RSS formats.
   feed.json = @json(feed.ori(data.ori))
   feed.xml = @rss(feed.ori(data.ori))
 
