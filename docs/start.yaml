@@ -1,7 +1,7 @@
-markdown:
+markdown/:
   2025-07-04.md: First post
   2025-07-07.md: Second post
   2025-07-10.md: Third post
-images: Images
-src:
-  assets: Stylesheet and fonts
+images/: Images
+src/:
+  assets/: Stylesheet and fonts

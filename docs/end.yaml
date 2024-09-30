@@ -1,12 +1,12 @@
-assets: Stylesheet and fonts
-images: Images
+assets/: Stylesheet and fonts
+feed.json: JSON feed
+feed.xml: RSS feed
+images/: Images
 index.html: Same as first page of posts
-pages:
+pages/:
   1.html: First page of posts
   2.html: Second page of posts
-posts:
+posts/:
   2025-07-04.html: First post
   2025-07-07.html: Second post
   2025-07-10.html: Third post
-feed.json: JSON feed
-feed.xml: RSS feed
