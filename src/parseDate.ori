@@ -1,7 +1,7 @@
 // Parse a YYYY-MM-DD date from the start of the text.
 
-(text) => text
-  → @regexMatchFn("^(?<date>\\d\\d\\d\\d-\\d\\d-\\d\\d)")
+(text) =>
+  @regexMatch(text, "^(?<date>\\d\\d\\d\\d-\\d\\d-\\d\\d)")
 
   // Dates will end up in GMT, so we shift the date to the desired time zone.
   // This sample content uses noon in U.S. Eastern Time, which is UTC minus 5
