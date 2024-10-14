@@ -2,23 +2,21 @@
 (paginated) => page.ori({
   title: `${ siteInfo.yaml/title } — Page ${ paginated/pageNumber }`
   area: @if(@equals(paginated/pageNumber, 1), "home")
-  @text: `
+  @text: @indent`
     <h1>${ siteInfo.yaml/title }</h1>
     <p>${ siteInfo.yaml/description }</p>
-
     ${
       // List all the posts on this page.
       @map(paginated/items, postFragment.ori)
     }
-
     <p>
-      ${ @if(paginated/nextPage, =`
-          <a class="next" href="/pages/${ paginated/nextPage }.html">
+      ${ @if(paginated/nextPage, =@indent`
+        <a class="next" href="/pages/${ paginated/nextPage }.html">
           <strong>Older posts</strong>
         </a>
         &nbsp;
       `) }
-      ${ @if(paginated/previousPage, =`
+      ${ @if(paginated/previousPage, =@indent`
         <a class="previous" href="${
           @if(@equals(paginated/previousPage, 1), `/`, =`/pages/${ paginated/previousPage }.html` )
         }">
