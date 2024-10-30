@@ -4,11 +4,11 @@
   @text: @indent`
     ${ postFragment.ori(post, key) }
     <p>
-      ${ @if(post/previousKey, =@indent`
+      ${ calc:if(post/previousKey, =@indent`
         <a class="previous" href="${ post/previousKey }">Previous: ${ tree(post/previousKey)/title }</a>
         &nbsp;
       `) }
-      ${ @if(post/nextKey, =@indent`
+      ${ calc:if(post/nextKey, =@indent`
         <a class="next" href="${ post/nextKey }">Next: ${ tree(post/nextKey)/title }</a>
       `, =@indent`
         <a class="next" href="/">

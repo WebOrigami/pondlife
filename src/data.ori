@@ -6,17 +6,17 @@
 markdown
 
 // Convert the markdown to HTML, changing the extension from `md` to `html`.
-→ =@map(_, @mdHtml)
+→ =tree:map(_, html:fromMd)
 
 // Add a `date` field parsed from the filename.
-→ =@map(_, (post, fileName) => { …post, date: parseDate.ori(fileName) })
+→ =tree:map(_, (post, fileName) => { …post, date: parseDate.ori(fileName) })
 
 // Add next/previous keys. The posts are already in chronological order
 // because their names start with a YYYY-MM-DD date, so we can determine the
 // next and previous posts by looking at the adjacent posts in the list. We
 // need to do this before reversing the order in the next step; we want "next"
 // to go to the next post in chronological order, not display order.
-→ @addNextPrevious
+→ tree:addNextPrevious
 
 // Finally, reverse to get posts in reverse chronological order.
-→ @reverse
+→ tree:reverse
