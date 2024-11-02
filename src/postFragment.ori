@@ -1,5 +1,5 @@
 // A single blog post in a list
-(post, key) => @indent`
+(post, key) => indent`
   <section>
     <a href="/posts/${ key }">
       <h2>${ post/title }</h2>

@@ -1,24 +1,24 @@
 // A page showing multiple posts
 (paginated) => page.ori({
   title: `${ siteInfo.yaml/title } — Page ${ paginated/pageNumber }`
-  area: calc:if(calc:equals(paginated/pageNumber, 1), "home")
-  @text: @indent`
+  area: if(equals(paginated/pageNumber, 1), "home")
+  @text: indent`
     <h1>${ siteInfo.yaml/title }</h1>
     <p>${ siteInfo.yaml/description }</p>
     ${
       // List all the posts on this page.
-      tree:map(paginated/items, postFragment.ori)
+      map(paginated/items, postFragment.ori)
     }
     <p>
-      ${ calc:if(paginated/nextPage, =@indent`
+      ${ if(paginated/nextPage, =indent`
         <a class="next" href="/pages/${ paginated/nextPage }.html">
           <strong>Older posts</strong>
         </a>
         &nbsp;
       `) }
-      ${ calc:if(paginated/previousPage, =@indent`
+      ${ if(paginated/previousPage, =indent`
         <a class="previous" href="${
-          calc:if(calc:equals(paginated/previousPage, 1), `/`, =`/pages/${ paginated/previousPage }.html` )
+          if(equals(paginated/previousPage, 1), `/`, =`/pages/${ paginated/previousPage }.html` )
         }">
           <strong>Newer posts</strong>
         </a>
