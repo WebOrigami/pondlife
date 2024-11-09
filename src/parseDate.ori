@@ -7,4 +7,4 @@
   // This sample content uses noon in U.S. Eastern Time, which is UTC minus 5
   // hours. See https://en.wikipedia.org/wiki/List_of_UTC_offsets for a list of
   // UTC offsets; replace with the time zone you want for your posts.
-  → (match) => new:(js:Date)(`${ match/date }T12:00-05:00`)
+  → (match) => new:(Date)(`${ match/date }T12:00-05:00`)
