@@ -10,7 +10,7 @@
     "node": "^22.0.0"
   },
   "scripts": {
-    "build": "ori copy src/site.ori, clean files:build",
+    "build": "ori copy src/site.ori, clear files:build",
     "docs": "ori 'svg docs/start.yaml, { createLinks: false }' > docs/start.svg; ori 'svg docs/end.yaml, { createLinks: false }' > docs/end.svg",
     "start": "ori serve watch src, =debug site.ori"
   }

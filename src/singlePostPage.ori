@@ -5,11 +5,11 @@
     ${ postFragment.ori(post, key) }
     <p>
       ${ if(post/previousKey, =indent`
-        <a class="previous" href="${ post/previousKey }">Previous: ${ scope:tree(post/previousKey)/title }</a>
+        <a class="previous" href="${ post/previousKey }">Previous: ${ tree/(post/previousKey)/title }</a>
         &nbsp;
       `) }
       ${ if(post/nextKey, =indent`
-        <a class="next" href="${ post/nextKey }">Next: ${ scope:tree(post/nextKey)/title }</a>
+        <a class="next" href="${ post/nextKey }">Next: ${ tree/(post/nextKey)/title }</a>
       `, =indent`
         <a class="next" href="/">
           Back to home
