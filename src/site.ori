@@ -18,7 +18,7 @@
   // posts into a page with an `.html` extension.
   (paginated) = paginate(data.ori, 10)
   pages/ = map(paginated, {
-    extension: "→html"
+    extension: "→.html"
     value: multiPostPage.ori
   })
 
