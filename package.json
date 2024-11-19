@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "type": "module",
   "dependencies": {
-    "@weborigami/origami": "0.0.70"
+    "@weborigami/origami": "0.1.0"
   },
   "license": "MIT",
   "engines": {
