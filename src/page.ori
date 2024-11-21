@@ -10,7 +10,7 @@
       <link rel="alternate" type="application/json" title="${ siteInfo.yaml/description }" href="feed.json">
       <title>${ page/title }</title>
     </head>
-    <body ${ if(page/area, =`class="${ page/area }"`) }>
+    <body ${ page/area ? `class="${ page/area }"` : "" }>
       <header>
         <a href="/" class="home">${ siteInfo.yaml/title }</a>
         <a href="/about.html" class="about">About</a>

@@ -1,7 +1,7 @@
 // A page showing multiple posts
 (paginated) => page.ori({
   title: `${ siteInfo.yaml/title } — Page ${ paginated/pageNumber }`
-  area: if(equals(paginated/pageNumber, 1), "home")
+  area: paginated/pageNumber == 1 ? "home" : null
   @text: indent`
     <h1>${ siteInfo.yaml/title }</h1>
     <p>${ siteInfo.yaml/description }</p>
@@ -10,19 +10,27 @@
       map(paginated/items, postFragment.ori)
     }
     <p>
-      ${ if(paginated/nextPage, =indent`
-        <a class="next" href="/pages/${ paginated/nextPage }.html">
-          <strong>Older posts</strong>
-        </a>
-        &nbsp;
-      `) }
-      ${ if(paginated/previousPage, =indent`
-        <a class="previous" href="${
-          if(equals(paginated/previousPage, 1), `/`, =`/pages/${ paginated/previousPage }.html` )
-        }">
-          <strong>Newer posts</strong>
-        </a>
-      `) }
+      ${
+        paginated/nextPage
+          ? indent`
+            <a class="next" href="/pages/${ paginated/nextPage }.html">
+              <strong>Older posts</strong>
+            </a>
+            &nbsp;
+          `
+          : ""
+      }
+      ${
+        paginated/previousPage
+          ? indent`
+            <a class="previous" href="${
+              paginated/previousPage == 1 ? "/" : `/pages/${ paginated/previousPage }.html`
+            }">
+              <strong>Newer posts</strong>
+            </a>
+          `
+          : ""
+      }
     </p>
     <footer>
       <a href="/feed.xml">RSS feed</a>
