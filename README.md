@@ -51,7 +51,7 @@ The pipeline starts with a reference to `markdown`. In this project, that ends u
 … more posts …
 ```
 
-The next line, `→ @mapFn(@mdHtml)` sends the above to a built-in mapping function called [@mapFn](https://weborigami.org/builtins/@map.html). Here that will apply the built-in [@mdHtml](https://weborigami.org/builtins/@map.html) to each of the keys and values in the set. That will change the `.md` extension in the keys to `.html`, and change the markdown text to HTML. After this step, the post data is:
+The next line, `→ @mapFn(@mdHtml)` sends the above to a built-in mapping function called [map](https://weborigami.org/builtins/tree/map.html). Here that will apply the built-in [mdHtml](https://weborigami.org/builtins/text/mdHtml.html) to each of the keys and values in the set. That will change the `.md` extension in the keys to `.html`, and change the markdown text to HTML. After this step, the post data is:
 
 ```
 2025-07-04.html:
@@ -63,7 +63,7 @@ The next line, `→ @mapFn(@mdHtml)` sends the above to a built-in mapping funct
 … more posts …
 ```
 
-The next step in the pipeline is another `@mapFn`. This one calls a helper function `parseDate.ori` written in Origami that extracts the date from a post's key and returns it as a JavaScript Date object. The resulting date is added to the post as a `date` field so that templates will be able to use it as a date. The data now look like:
+The next step in the pipeline is another `map`. This one calls a helper function `parseDate.ori` written in Origami that extracts the date from a post's key and returns it as a JavaScript Date object. The resulting date is added to the post as a `date` field so that templates will be able to use it as a date. The data now look like:
 
 ```
 2025-07-04.html:
@@ -77,7 +77,7 @@ The next step in the pipeline is another `@mapFn`. This one calls a helper funct
 … more posts …
 ```
 
-We'd like the page for an individual post to have links to the pages for the next and previous posts, so the next step in the pipeline calls [@addNextPrevious](https://weborigami.org/builtins/@addNextPrevious.html) to add `nextKey` and `previousKey` properties to the post data:
+We'd like the page for an individual post to have links to the pages for the next and previous posts, so the next step in the pipeline calls [addNextPrevious](https://weborigami.org/builtins/tree/addNextPrevious.html) to add `nextKey` and `previousKey` properties to the post data:
 
 ```
 2025-07-04.html:
@@ -94,7 +94,7 @@ We'd like the page for an individual post to have links to the pages for the nex
 … more posts …
 ```
 
-Because the original markdown files have names that start with a date in YYYY-MM-DD format, by default the posts will be in chronological order. We'd like to display the posts in _reverse_ chronological order, so the final step of the pipeline calls [@reverse](https://weborigami.org/builtins/@reverse.html) to reverse the order of the posts. The posts that were at the beginning will now be at the _end_ of the data:
+Because the original markdown files have names that start with a date in YYYY-MM-DD format, by default the posts will be in chronological order. We'd like to display the posts in _reverse_ chronological order, so the final step of the pipeline calls [reverse](https://weborigami.org/builtins/tree/reverse.html) to reverse the order of the posts. The posts that were at the beginning will now be at the _end_ of the data:
 
 ```
 … more posts …
