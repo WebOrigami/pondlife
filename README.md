@@ -27,17 +27,7 @@ The posts are written in markdown files with a `title` property in front matter.
 
 Documents in Origami are generally represented as a plain JavaScript objects with a `@text` property containing the document text. Each of the functions in the pipeline manipulates the collection of posts, changing either the keys (names) or values (the actual data) of the posts one step at a time.
 
-The Origami source for the pipeline is:
-
-```
-data = markdown
-  → @mapFn(@mdHtml)
-  → @mapFn((post, fileName) => @merge(post, {
-    date: parseDate.ori(fileName)
-  }))
-  → @addNextPrevious
-  → @reverse
-```
+The Origami source for the pipeline can be found in [src/data.ori](./src/data.ori).
 
 The pipeline starts with a reference to `markdown`. In this project, that ends up referring to the `markdown` folder at the top level of the project. Origami treats folder/file trees and objects the same, so if we were to render the post data at this point in YAML it would look like:
 
@@ -51,7 +41,7 @@ The pipeline starts with a reference to `markdown`. In this project, that ends u
 … more posts …
 ```
 
-The next line, `→ @mapFn(@mdHtml)` sends the above to a built-in mapping function called [map](https://weborigami.org/builtins/tree/map.html). Here that will apply the built-in [mdHtml](https://weborigami.org/builtins/text/mdHtml.html) to each of the keys and values in the set. That will change the `.md` extension in the keys to `.html`, and change the markdown text to HTML. After this step, the post data is:
+The next line, `→ =map(_, mdHtml)` sends the above to a built-in mapping function called [map](https://weborigami.org/builtins/tree/map.html). Here that will apply the built-in [mdHtml](https://weborigami.org/builtins/text/mdHtml.html) to each of the keys and values in the set. That will change the `.md` extension in the keys to `.html`, and change the markdown text to HTML. After this step, the post data is:
 
 ```
 2025-07-04.html:
