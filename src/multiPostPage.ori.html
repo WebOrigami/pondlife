@@ -1,0 +1,43 @@
+---
+// A page showing multiple posts
+(paginated) => page.ori.html({
+  title: `${ siteInfo.yaml/title } — Page ${ paginated/pageNumber }`
+  area: paginated/pageNumber === 1 ? "home" : null
+  @text: @template()
+})
+---
+
+<h1>${ siteInfo.yaml/title }</h1>
+<p>${ siteInfo.yaml/description }</p>
+${
+  // List all the posts on this page.
+  map(paginated/items, postFragment.ori.html)
+}
+<p>
+  ${
+    paginated/nextPage
+      ? indent`
+        <a class="next" href="/pages/${ paginated/nextPage }.html">
+          <strong>Older posts</strong>
+        </a>
+        &nbsp;
+      `
+      : ""
+  }
+  ${
+    paginated/previousPage
+      ? indent`
+        <a class="previous" href="${
+          paginated/previousPage == 1 ? "/" : `/pages/${ paginated/previousPage }.html`
+        }">
+          <strong>Newer posts</strong>
+        </a>
+      `
+      : ""
+  }
+</p>
+<footer>
+  <a href="/feed.xml">RSS feed</a>
+  <a href="/feed.json">JSON feed</a>
+  <a href="https://github.com/WebOrigami/pondlife">View source</a>
+</footer>

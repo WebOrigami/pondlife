@@ -1,0 +1,16 @@
+---
+// A single blog post in a list
+(post, key) => @template()
+---
+
+<section>
+  <a href="/posts/${ key }">
+    <h2>${ post/title }</h2>
+  </a>
+  ${ post/date/toLocaleDateString("en-US", {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }) }
+  ${ post/@text }
+</section>

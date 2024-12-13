@@ -1,7 +1,7 @@
 // Define the blog's overall structure
 {
   // About page uses the basic template.
-  about.html = page.ori(mdHtml(about.md))
+  about.html = page.ori.html(mdHtml(about.md))
 
   // Assets (fonts, styles) and images are included as is.
   assets
@@ -19,9 +19,9 @@
   (paginated) = paginate(data.ori, 10)
   pages/ = map(paginated, {
     extension: "→.html"
-    value: multiPostPage.ori
+    value: multiPostPage.ori.html
   })
 
   // The posts area contains a page for each individual post.
-  posts/ = map(data.ori, singlePostPage.ori)
+  posts/ = map(data.ori, singlePostPage.ori.html)
 }

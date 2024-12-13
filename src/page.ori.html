@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/assets/styles.css">
+    <link rel="alternate" type="application/rss+xml" title="${ siteInfo.yaml/description }" href="feed.xml">
+    <link rel="alternate" type="application/json" title="${ siteInfo.yaml/description }" href="feed.json">
+    <title>${ _/title }</title>
+  </head>
+  <body ${ _/area ? `class="${ _/area }"` : "" }>
+    <header>
+      <a href="/" class="home">${ siteInfo.yaml/title }</a>
+      <a href="/about.html" class="about">About</a>
+    </header>
+    <main>
+      ${ _/@text }
+    </main>
+  </body>
+</html>
