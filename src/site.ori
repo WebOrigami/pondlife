@@ -1,27 +1,23 @@
 // Define the blog's overall structure
 {
-  // About page uses the basic template.
+  // About page uses the basic page template
   about.html = page.ori(mdHtml(about.md))
 
   // Assets (fonts, styles) and images are included as is.
   assets
   images
 
-  // Feeds render the data in JSON Feed and RSS formats.
-  feed.json = json(feed.ori(data.ori))
-  feed.xml = rss(feed.ori(data.ori))
+  // Feeds render the posts in JSON Feed and RSS formats
+  (feed) = feed.ori(posts.ori)
+  feed.json = json(feed)
+  feed.xml = rss(feed)
 
-  // Use the first page of posts as the home page.
-  index.html = pages/1.html
+  index.html = pages/1.html  // same as first page in pages area
 
-  // The pages area groups the posts into sets of 10, turning each group of
-  // posts into a page with an `.html` extension.
-  (paginated) = paginate(data.ori, 10)
-  pages/ = map(paginated, {
-    extension: "→.html"
-    value: multiPostPage.ori
-  })
+  // Group posts into pages of 10
+  (paginated) = paginate(posts.ori, 10)
+  pages/ = map(paginated, { extension: "→.html", value: multiPostPage.ori })
 
-  // The posts area contains a page for each individual post.
-  posts/ = map(data.ori, singlePostPage.ori)
+  // The posts area contains a page for each individual post
+  posts/ = map(posts.ori, singlePostPage.ori)
 }

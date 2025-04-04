@@ -9,7 +9,7 @@ markdown
 → =map(_, mdHtml)
 
 // Add a `date` field parsed from the filename.
-→ =map(_, (post, fileName) => { …post, date: parseDate.ori(fileName) })
+→ =map(_, (post, fileName) => { …post, date: parseDate.js(fileName) })
 
 // Add next/previous keys. The posts are already in chronological order
 // because their names start with a YYYY-MM-DD date, so we can determine the
@@ -18,5 +18,5 @@ markdown
 // to go to the next post in chronological order, not display order.
 → addNextPrevious
 
-// Finally, reverse to get posts in reverse chronological order.
+// Entries are sorted by date; reverse for latest first
 → reverse
