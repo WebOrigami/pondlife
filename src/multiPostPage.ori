@@ -1,7 +1,7 @@
 // A page showing multiple posts
 (paginated) => page.ori({
   title: `${ siteInfo.yaml/title } — Page ${ paginated/pageNumber }`
-  area: paginated/pageNumber == 1 ? "home" : null
+  area: paginated/pageNumber === 1 ? "home" : null
   @text: indent`
     <h1>${ siteInfo.yaml/title }</h1>
     <p>${ siteInfo.yaml/description }</p>

@@ -1,4 +1,4 @@
-// A single blog post in a list
+// A single blog post, on its own or in a list
 (post, key) => indent`
   <section>
     <a href="/posts/${ key }">
