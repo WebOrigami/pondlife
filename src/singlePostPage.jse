@@ -1,0 +1,25 @@
+// A page showing a single post
+(post, key, tree) => <page.ori>({
+  title: post.title
+  @text: indent`
+    ${ <postFragment.ori>(post, key) }
+    <p>
+      ${ post.previousKey
+          ? indent`
+            <a class="previous" href="${ post.previousKey }">Previous: ${ tree[post.previousKey].title }</a>
+            &nbsp;
+          `
+          : ""
+      }
+      ${ post.nextKey
+          ? indent`
+            <a class="next" href="${ post.nextKey }">Next: ${ tree[post.nextKey].title }</a>
+          `
+          : indent`
+            <a class="next" href="/">
+              Back to home
+            </a>
+          `
+      }
+    </p>
+` })

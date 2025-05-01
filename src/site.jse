@@ -1,0 +1,23 @@
+// Define the blog's overall structure
+{
+  // About page uses the basic page template
+  "about.html" = <page.ori>(Origami.mdHtml(<about.md>))
+
+  // Assets (fonts, styles) and images are included as is.
+  assets
+  images
+
+  // Feeds render the posts in JSON Feed and RSS formats
+  (feed) = <feed.ori>(<posts.ori>)
+  "feed.json" = Tree.json(feed)
+  "feed.xml" = Site.rss(feed)
+
+  "index.html" = <pages/1.html>  // same as first page in pages area
+
+  // Group posts into pages of 10
+  (paginated) = Tree.paginate(<posts.ori>, 10)
+  "pages/" = Tree.map(paginated, { extension: "→.html", value: <multiPostPage.ori> })
+
+  // The posts area contains a page for each individual post
+  "posts/" = Tree.map(<posts.ori>, <singlePostPage.ori>)
+}
