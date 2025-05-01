@@ -3,13 +3,11 @@
 // displayed on the various types of pages.
 
 // Start with the posts in the `markdown` folder.
-markdown
-
 // Convert the markdown to HTML, changing the extension from `md` to `html`.
-→ =map(_, mdHtml)
+map(markdown, mdHtml)
 
 // Add a `date` field parsed from the filename.
-→ =map(_, (post, fileName) => { …post, date: parseDate.js(fileName) })
+→ (html) => map(html, (post, fileName) => { …post, date: parseDate.js(fileName) })
 
 // Add next/previous keys. The posts are already in chronological order
 // because their names start with a YYYY-MM-DD date, so we can determine the
