@@ -1,7 +1,7 @@
 // A page showing a single post
 (post, key, tree) => <page.jse>({
   title: post.title
-  @text: Tree.indent`
+  __body__: Tree.indent`
     ${ <postFragment.jse>(post, key) }
     <p>
       ${ post.previousKey

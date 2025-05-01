@@ -2,7 +2,7 @@
 (paginated) => <page.jse>({
   title: `${ <siteInfo.yaml>.title } — Page ${ paginated.pageNumber }`
   area: paginated.pageNumber === 1 ? "home" : null
-  @text: Tree.indent`
+  __body__: Tree.indent`
     <h1>${ <siteInfo.yaml>.title }</h1>
     <p>${ <siteInfo.yaml>.description }</p>
     ${

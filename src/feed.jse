@@ -9,7 +9,7 @@
   // Map the post data to JSON Feed items
   items: Tree.values(Tree.map(posts, (post, slug) => {
     // Patch image URLs to be absolute
-    content_html: (post._body_).replaceAll('src="\/', `src="${<siteInfo.yaml>.url}/`)
+    content_html: post.__body__.replaceAll('src="\/', `src="${<siteInfo.yaml>.url}/`)
     date_published: post.date
     id: `${ <siteInfo.yaml>.url }/posts/${ slug }`
     title: post.title
