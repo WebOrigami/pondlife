@@ -4,6 +4,8 @@ This project shows a sample blog written in [Origami](https://weborigami.org) la
 
 This sample blog is based on the [origami-blog-start](https://github.com/WebOrigami/origami-blog-start) project. If you'd like to start your own blog like this, you can fork that project.
 
+This project was discussed in a [blog post](https://jan.miksovsky.com/posts/2024/05-24-pondlife.html) and a [follow-up post](https://jan.miksovsky.com/posts/2025/05-02-concise-expressions.html).
+
 The text for this sample blog is adapted from portions of [Walden](https://www.gutenberg.org/files/205/205-h/205-h.htm) by Henry David Thoreau.
 
 ## Structure of the site
