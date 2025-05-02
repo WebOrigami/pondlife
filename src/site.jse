@@ -10,7 +10,7 @@
   // Feeds render the posts in JSON Feed and RSS formats
   (feed) = <feed.jse>(<posts.jse>)
   "feed.json" = Tree.json(feed)
-  "feed.xml" = Site.rss(feed)
+  "feed.xml" = Origami.rss(feed)
 
   "index.html" = <pages/1.html>  // same as first page in pages area
 
