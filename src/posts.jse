@@ -4,7 +4,7 @@
 
 // Start with the posts in the `markdown` folder.
 // Convert the markdown to HTML, changing the extension from `md` to `html`.
-Tree.map(<markdown>, Origami.mdHtml)
+Tree.map(<../markdown>, Origami.mdHtml)
 
 // Add a `date` field parsed from the filename.
 → (html) => map(html, (post, fileName) => { …post, date: <parseDate.js>(fileName) })
