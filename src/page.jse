@@ -16,7 +16,7 @@
         <a href="/about.html" class="about">About</a>
       </header>
       <main>
-        ${ page.__body__ }
+        ${ page._body }
       </main>
     </body>
   </html>

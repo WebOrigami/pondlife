@@ -9,6 +9,6 @@
       month: 'long',
       day: 'numeric'
     }) }
-    ${ post.__body__ }
+    ${ post._body }
   </section>
 `
