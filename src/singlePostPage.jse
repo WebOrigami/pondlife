@@ -1,6 +1,6 @@
 // A page showing a single post
 (post, key, tree) => <page.jse>({
-  title: post.title,
+  title: post.title
   _body: Tree.indent`
     ${ <postFragment.jse>(post, key) }
     <p>
