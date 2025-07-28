@@ -1,23 +1,23 @@
 // Define the blog's overall structure
 {
   // About page uses the basic page template
-  about.html = <page.jse>(Origami.mdHtml(<about.md>))
+  about.html = page.jse(Origami.mdHtml(about.md))
 
   // Assets (fonts, styles) and images are included as is.
-  <assets>
-  <images>
+  assets/
+  images/
 
   // Feeds render the posts in JSON Feed and RSS formats
-  (feed) = <feed.jse>(<posts.jse>)
+  (feed) = feed.jse(postData.jse)
   feed.json = Tree.json(feed)
   feed.xml = Origami.rss(feed)
 
-  index.html = pages["1.html"]  // same as first page in pages area
+  index.html = pages/1.html  // same as first page in pages area
 
   // Group posts into pages of 10
-  (paginated) = Tree.paginate(<posts.jse>, 10)
-  pages/ = Tree.map(paginated, { extension: "→.html", value: <multiPostPage.jse> })
+  (paginated) = Tree.paginate(postData.jse, 10)
+  pages/ = Tree.map(paginated, { extension: "→.html", value: multiPostPage.jse })
 
   // The posts area contains a page for each individual post
-  posts/ = Tree.map(<posts.jse>, <singlePostPage.jse>)
+  posts/ = Tree.map(postData.jse, singlePostPage.jse)
 }

@@ -1,18 +1,18 @@
 // The posts in JSON Feed format
 (posts) => {
   version: "https://jsonfeed.org/version/1.1"
-  title: <siteInfo.yaml>.title
-  description: <siteInfo.yaml>.description
-  feed_url: `${ <siteInfo.yaml>.url }/feed.json`
-  home_page_url: <siteInfo.yaml>.url
+  title: (siteInfo.yaml).title
+  description: (siteInfo.yaml).description
+  feed_url: `${ (siteInfo.yaml).url }/feed.json`
+  home_page_url: (siteInfo.yaml).url
   
   // Map the post data to JSON Feed items
   items: Tree.values(Tree.map(posts, (post, slug) => {
     // Patch image URLs to be absolute
-    content_html: post._body.replaceAll('src="\/', `src="${<siteInfo.yaml>.url}/`)
+    content_html: post._body.replaceAll('src="\/', `src="${ (siteInfo.yaml).url }/`)
     date_published: post.date
-    id: `${ <siteInfo.yaml>.url }/posts/${ slug }`
+    id: `${ (siteInfo.yaml).url }/posts/${ slug }`
     title: post.title
-    url: `${ <siteInfo.yaml>.url }/posts/${ slug }`
+    url: `${ (siteInfo.yaml).url }/posts/${ slug }`
   }))
 }
