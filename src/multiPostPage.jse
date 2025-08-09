@@ -1,10 +1,10 @@
 // A page showing multiple posts
-(paginated) => <page.jse>({
-  title: `${ <siteInfo.yaml>.title } — Page ${ paginated.pageNumber }`
+(paginated) => page.jse({
+  title: `${ (siteInfo.yaml).title } — Page ${ paginated.pageNumber }`
   area: paginated.pageNumber === 1 ? "home" : null
   _body: Tree.indent`
-    <h1>${ <siteInfo.yaml>.title }</h1>
-    <p>${ <siteInfo.yaml>.description }</p>
+    <h1>${ (siteInfo.yaml).title }</h1>
+    <p>${ (siteInfo.yaml).description }</p>
     ${
       // List all the posts on this page.
       Tree.map(paginated.items, <postFragment.jse>)
