@@ -1,8 +1,8 @@
 // A page showing a single post
-(post, key, tree) => page.jse({
+(post, key, tree) => page.ori({
   title: post.title
   _body: Tree.indent`
-    ${ <postFragment.jse>(post, key) }
+    ${ <postFragment.ori>(post, key) }
     <p>
       ${ post.previousKey
           ? Tree.indent`
