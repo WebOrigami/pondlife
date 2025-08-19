@@ -11,7 +11,7 @@
     // Patch image URLs to be absolute
     content_html: post._body.replaceAll('src="\/', `src="${ (siteInfo.yaml).url }/`)
     date_published: post.date
-    id: `${ (siteInfo.yaml).url }/posts/${ slug }`
+    id: url
     title: post.title
     url: `${ (siteInfo.yaml).url }/posts/${ slug }`
   }))
