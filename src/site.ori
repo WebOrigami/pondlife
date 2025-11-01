@@ -16,7 +16,7 @@
 
   // Group posts into pages of 10
   (paginated) = Tree.paginate(postData.ori, 10)
-  pages/ = Tree.map(paginated, { extension: "→.html", value: multiPostPage.ori })
+  pages/ = Tree.mapExtension(paginated, "→.html", multiPostPage.ori)
 
   // The posts area contains a page for each individual post
   posts/ = Tree.map(postData.ori, singlePostPage.ori)
