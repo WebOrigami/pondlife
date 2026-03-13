@@ -2,7 +2,7 @@
 (post, key, tree) => page.ori({
   title: post.title
   _body: Tree.indent`
-    ${ <postFragment.ori>(post, key) }
+    ${ postFragment.ori(post, key) }
     <p>
       ${ post.previousKey
           ? Tree.indent`

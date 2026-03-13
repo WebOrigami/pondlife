@@ -7,15 +7,13 @@
     <p>${ (siteInfo.yaml).description }</p>
     ${
       // List all the posts on this page.
-      Tree.map(paginated.items, <postFragment.ori>)
+      Tree.map(paginated.items, postFragment.ori)
     }
     <p>
       ${
         paginated.nextPage
           ? Tree.indent`
-            <a class="next" href="/pages/${ paginated.nextPage }.html">
-              <strong>Older posts</strong>
-            </a>
+            <a class="next" href="/pages/${ paginated.nextPage }.html"><strong>Older posts</strong></a>
             &nbsp;
           `
           : ""
@@ -25,9 +23,7 @@
           ? Tree.indent`
             <a class="previous" href="${
               paginated.previousPage == 1 ? "/" : `/pages/${ paginated.previousPage }.html`
-            }">
-              <strong>Newer posts</strong>
-            </a>
+            }"><strong>Newer posts</strong></a>
           `
           : ""
       }
