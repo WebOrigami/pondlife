@@ -104,3 +104,14 @@ Because the original markdown files have names that start with a date in YYYY-MM
 ```
 
 This is assigned to the `data` variable so that it can be rendered into HTML by the other formulas in `site.ori`.
+
+## Other implementations
+
+This project is used as a reference artifact for comparing blog construction in various tools and languages. You might also be interested in these alternate implementations:
+
+- [Astro](https://github.com/JanMiksovsky/pondlife-astro)
+- [Eleventy](https://github.com/JanMiksovsky/pondlife-eleventy)
+- [JavaScript](https://github.com/JanMiksovsky/pondlife-js)
+- [JavaScript](https://github.com/WebOrigami/pondlife-async-tree) using the [async-tree](https://weborigami.org/async-tree/) library
+- [Python](https://github.com/JanMiksovsky/pondlife-python)
+- [Zig](https://github.com/JanMiksovsky/pondlife-zig)
