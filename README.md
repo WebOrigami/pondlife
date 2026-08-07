@@ -8,6 +8,19 @@ This project was discussed in a [blog post](https://jan.miksovsky.com/posts/2024
 
 The text for this sample blog is adapted from portions of [Walden](https://www.gutenberg.org/files/205/205-h/205-h.htm) by Henry David Thoreau.
 
+## Requirements
+
+Site tools like static site generators often impose constraints on how you can arrange and structure your source content, but it's extremely common to have your own personal reasons for wanting things set up in a particular way.
+
+This #pondlife blog assumes the following set of requirements:
+
+1. The blog posts go in a top-level `/markdown` folder.
+2. Each markdown post has a name containing a date like `2025-07-04.md`; this date should be used as the date for the post. Each post has YAML front matter containing a `title` property. The body of the post is markdown that should be converted to HTML.
+3. The images for the posts go in an `/images` folder.
+4. The site’s static assets go in `/src/assets`.
+5. A standard page template is used for all posts to provide consistent headers, footers, etc.
+6. The project output goes in the `/build` folder.
+
 ## Structure of the site
 
 The site's starting point are the markdown files in the `markdown` folder, the images in the `images` folder, and the stylesheet and other files in the `src/assets` folder.
