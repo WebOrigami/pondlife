@@ -1,0 +1,9 @@
+{
+  projectorCommands: [
+    {
+      label: "Publish to Neocities"
+      accelerator: "Shift+CmdOrCtrl+U"
+      click: () => publish.ori/
+    }
+  ]
+}
