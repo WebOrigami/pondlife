@@ -1,0 +1,11 @@
+{
+  commands: [
+    {
+      label: "Publish to Neocities"
+      accelerator: "Shift+CmdOrCtrl+U"
+      click: () => package:@weborigami/neocities/publish(src/site.ori, {
+        token: token.txt
+      })
+    }
+  ]
+}

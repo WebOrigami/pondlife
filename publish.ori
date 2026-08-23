@@ -1,1 +1,0 @@
-package:@weborigami/neocities/publish(src/site.ori, { token: token.txt })
