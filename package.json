@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "type": "module",
   "dependencies": {
-    "@weborigami/origami": "0.7.0"
+    "@weborigami/origami": "0.7.0",
+    "@weborigami/neocities": "0.0.19"
   },
   "license": "MIT",
   "scripts": {
