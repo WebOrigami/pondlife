@@ -1,6 +1,11 @@
 {
   commands: [
     {
+      label: "Test"
+      accelerator: "CmdOrCtrl+T"
+      click: () => `The time is ${ new Date().toTimeString() }`
+    }
+    {
       label: "Publish to Neocities"
       accelerator: "Shift+CmdOrCtrl+U"
       click: () => package:@weborigami/neocities/publish(src/site.ori, {
