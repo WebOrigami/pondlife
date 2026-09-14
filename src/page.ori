@@ -4,7 +4,7 @@
   <html lang="en">
     <head>
       <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="width=device-width">
       <link rel="stylesheet" type="text/css" href="/assets/styles.css">
       <link rel="alternate" type="application/rss+xml" title="${ (siteInfo.yaml).description }" href="/feed.xml">
       <link rel="alternate" type="application/json" title="${ (siteInfo.yaml).description }" href="/feed.json">
