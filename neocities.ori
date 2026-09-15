@@ -1,0 +1,4 @@
+package:@weborigami/neocities({
+  token: token.txt
+  url: "miksovsky.neocities.org"
+})
