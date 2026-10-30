@@ -1,0 +1,44 @@
+(post, key) => Tree.indent`
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>Edit ${ key }</title>
+      <link rel="stylesheet" type="text/css" href="/assets/styles.css">
+      <style>
+        form {
+          display: grid;
+          gap: 8px;
+
+          button, input, textarea {
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 16px;
+          }
+        }
+
+        textarea {
+          field-sizing: content;
+          resize: vertical;
+        }
+
+        button[type="submit"] {
+          justify-self: start;
+          padding: 2px 8px;
+        }
+      </style>
+    </head>
+    <body>
+      <form method="POST" action="/save">
+        <input type="text" name="key" value="${ key }">
+        <input type="text" name="title" value="${ post.title }">
+        <textarea name="_body">${ post._body }</textarea>
+        <button type="submit">Save</button>
+      </form>
+      <p>
+        <a href="/posts/${ key.replace(/.md$/, ".html") }">View post</a>
+      </p>
+    </body>
+  </html>
+`

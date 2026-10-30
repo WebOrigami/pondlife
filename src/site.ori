@@ -20,4 +20,7 @@
 
   // The posts area contains a page for each individual post
   posts/ = Tree.map(postData.ori, singlePostPage.ori)
+
+  (edit) = Tree.map(markdown/, (value, key) => Origami.volatile(editPost.ori(value, key)))
+  (save) = savePost.js/
 }
