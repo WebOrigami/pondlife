@@ -8,14 +8,18 @@
       <link rel="stylesheet" type="text/css" href="/assets/styles.css">
       <style>
         form {
+          --margin-top: 0.5em;
           display: grid;
-          gap: 8px;
 
           button, input, textarea {
             box-sizing: border-box;
             font-family: inherit;
             font-size: 16px;
           }
+        }
+
+        label {
+          margin-top: var(--margin-top);
         }
 
         textarea {
@@ -25,15 +29,22 @@
 
         button[type="submit"] {
           justify-self: start;
+          margin-top: var(--margin-top);
           padding: 2px 8px;
         }
       </style>
     </head>
     <body>
       <form method="POST" action="/save">
-        <input type="text" name="key" value="${ key }">
-        <input type="text" name="title" value="${ post.title }">
-        <textarea name="_body">${ post._body }</textarea>
+        <label for="key">File name</label>
+        <input type="text" id="key" name="key" value="${ key }">
+
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" value="${ post.title }">
+
+        <label for="_body">Body</label>
+        <textarea id="_body" name="_body">${ post._body }</textarea>
+        
         <button type="submit">Save</button>
       </form>
       <p>
